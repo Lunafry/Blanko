@@ -1,0 +1,279 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-dark: #000;
+    --color-light: #fff;
+    --color-accent: #ff7143;
+
+    --gap: 16px;
+}
+
+.page {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    min-width: 320px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1310px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/*header*/
+
+.header {
+    padding: 16px 0;
+    color: var(--color-light);
+    background-color: var(--color-dark);
+}
+
+.header__position {
+    position: relative;
+    z-index: 5;
+}
+
+.header__logo {
+    margin-right: 65px;
+}
+
+.email {
+    background: #FFFFFF1F;
+    border-radius: 4px;
+    padding: 4px 12px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--color-light);
+}
+
+.header__email {
+    margin-right: auto;
+}
+
+.header__nav {
+    margin-right: 65px;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.nav__link {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn--accent {
+    background-color: var(--color-accent);
+}
+
+.btn--big {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 20px 39px;
+}
+
+.btn--dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+/*hero*/
+
+.hero {
+    background-color: var(--color-accent);
+}
+
+.hero__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__wrapper {
+    margin-left: 23px;
+}
+
+.hero__content {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 587px;
+}
+
+.hero__title {
+    margin: 0;
+    margin-bottom: 27px;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+.hero__descr {
+    margin: 0;
+    margin-bottom: 22px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    color: var(--color-dark);
+}
+
+.hero__btns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.hero__image {
+    margin-top: -80px;
+}
+
+/*benefits*/
+
+.benefits {
+    padding: 80px 0;
+}
+
+.benefits__list {
+    --offsets: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.benefits__item {
+    display: flex;
+    align-items: center;
+    width: calc((100% - (var(--gap) * var(--offsets))) / (var(--offsets) + 1));
+
+}
+
+.benefits__item::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    margin-right: 24px;
+    display: block;
+    flex-shrink: 0;
+    background-color: #FDE7DA;
+    background-position: center;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+}
+
+.benefits__item--speed::before {
+    background-image: url("../img/speed.png");
+}
+
+.benefits__item--design::before {
+    background-image: url("../img/design.png");
+}
+
+.benefits__item--modularity::before {
+    background-image: url("../img/modularity.png");
+}
+@media (max-width: 992px) {
+    .benefits__list {
+        --offsets: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    .benefits__list {
+        --offsets: 0;
+    }
+}
+
+.benefits__subtitle {
+    margin: 0;
+    margin-bottom: 13px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: var(--color-dark);
+}
+
+.benefits__descr {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--color-dark);
+}
